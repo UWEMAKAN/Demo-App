@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Demo App</title>
+</head>
+<body>
+  <div class="container">
+    <main class="profile-page">
+      <header class="header">
+        <div class="brand-name">
+          <h1 class="heading primary-heading">Demo App</h1>
+        </div>
+        <form class="search" action="#" method="post">
+          <input type="text" class="search-bar" name="search-bar" id="search-bar">
+          <button class="search-button">
+            <svg class="icon icon--search" viewBox="0 0 32 32">
+              <title>search</title>
+              <path d="M31.008 27.231l-7.58-6.447c-0.784-0.705-1.622-1.029-2.299-0.998 1.789-2.096 2.87-4.815 2.87-7.787 0-6.627-5.373-12-12-12s-12 5.373-12 12 5.373 12 12 12c2.972 0 5.691-1.081 7.787-2.87-0.031 0.677 0.293 1.515 0.998 2.299l6.447 7.58c1.104 1.226 2.907 1.33 4.007 0.23s0.997-2.903-0.23-4.007zM12 20c-4.418 0-8-3.582-8-8s3.582-8 8-8 8 3.582 8 8-3.582 8-8 8z"></path>
+            </svg>
+          </button>
+        </form>
+        <div class="header-nav">
+          <div class="bookmarks">
+            <svg class="icon icon--bookmark" viewBox="0 0 32 32">
+              <title>Bookmark</title>
+              <path d="M6 0v32l10-10 10 10v-32z"></path>
+            </svg>
+            <span>7</span>
+          </div>
+          <div class="notifications">
+            <svg class="icon icon--bell" viewBox="0 0 32 32">
+              <title>Notifications</title>
+              <path d="M32.047 25c0-9-8-7-8-14 0-0.58-0.056-1.076-0.158-1.498-0.526-3.532-2.88-6.366-5.93-7.23 0.027-0.123 0.041-0.251 0.041-0.382 0-1.040-0.9-1.891-2-1.891s-2 0.851-2 1.891c0 0.131 0.014 0.258 0.041 0.382-3.421 0.969-5.966 4.416-6.039 8.545-0.001 0.060-0.002 0.121-0.002 0.183 0 7-8 5-8 14 0 2.382 5.331 4.375 12.468 4.878 0.673 1.263 2.002 2.122 3.532 2.122s2.86-0.86 3.532-2.122c7.137-0.503 12.468-2.495 12.468-4.878 0-0.007-0.001-0.014-0.001-0.021l0.048 0.021zM25.82 26.691c-1.695 0.452-3.692 0.777-5.837 0.958-0.178-2.044-1.893-3.648-3.984-3.648s-3.805 1.604-3.984 3.648c-2.144-0.18-4.142-0.506-5.837-0.958-2.332-0.622-3.447-1.318-3.855-1.691 0.408-0.372 1.523-1.068 3.855-1.691 2.712-0.724 6.199-1.122 9.82-1.122s7.109 0.398 9.82 1.122c2.332 0.622 3.447 1.318 3.855 1.691-0.408 0.372-1.523 1.068-3.855 1.691z"></path>
+            </svg>
+            <span>11</span>
+          </div>
+          <div onclick="dropDownFunction()" class="user-corner dropdown">
+              <div class="avatar">
+                <img src="/img/profile-photo.jpg" alt="Avatar">
+              </div>
+              <div class="user-name">
+                <span class="user-firstname">Elon</span>
+              </div>
+              <svg class="icon icon--down" viewBox="0 0 20 20">
+                <title>Drop Down</title>
+                <path d="M9.293 12.95l0.707 0.707 5.657-5.657-1.414-1.414-4.243 4.242-4.243-4.242-1.414 1.414z"></path>
+              </svg>
+              <div id="myDropdown" class="dropdown-content">
+                <a class="dropdown-link" href="#">
+                  <svg class="icon icon--edit" viewBox="0 0 32 32">
+                    <title>Edit</title>
+                    <path d="M27 0c2.761 0 5 2.239 5 5 0 1.126-0.372 2.164-1 3l-2 2-7-7 2-2c0.836-0.628 1.874-1 3-1zM2 23l-2 9 9-2 18.5-18.5-7-7-18.5 18.5zM22.362 11.362l-14 14-1.724-1.724 14-14 1.724 1.724z"></path>
+                  </svg>
+                  <span>Edit Profile</span>
+                </a>
+                <a class="dropdown-link" href="#">
+                  <svg class="icon icon--logout" viewBox="0 0 32 32">
+                    <title>Logout</title>
+                    <path d="M20 4.581v4.249c1.131 0.494 2.172 1.2 3.071 2.099 1.889 1.889 2.929 4.4 2.929 7.071s-1.040 5.182-2.929 7.071c-1.889 1.889-4.4 2.929-7.071 2.929s-5.182-1.040-7.071-2.929c-1.889-1.889-2.929-4.4-2.929-7.071s1.040-5.182 2.929-7.071c0.899-0.899 1.94-1.606 3.071-2.099v-4.249c-5.783 1.721-10 7.077-10 13.419 0 7.732 6.268 14 14 14s14-6.268 14-14c0-6.342-4.217-11.698-10-13.419zM14 0h4v16h-4z"></path>
+                  </svg>
+                  <span>Logout</span>
+                </a>
+              </div>
+            </div>
+        </div>
+      </header>
+      
+      <nav class="navigation">
+        <ul class="side-nav">
+          <li class="nav-item nav-item-1">
+            <a class="nav-link nav-link-1" href="/dashboard.html">
+              <svg class="icon icon--dashboard" viewBox="0 0 32 32">
+                <title>Dashboard</title>
+                <path d="M32 19l-6-6v-9h-4v5l-6-6-16 16v1h4v10h10v-6h4v6h10v-10h4z"></path>
+              </svg>
+              <span>Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item nav-item-2 nav-item--active">
+            <a class="nav-link nav-link-2" href="/profile.html">
+              <svg class="icon icon--profile" viewBox="0 0 32 32">
+                <title>user</title>
+                <path d="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z"></path>
+              </svg>
+              <span>Profile</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="legal">
+            &copy; 2019 Bridge Tech. All Rights Reserved.
+        </div>
+      </nav>
+      
+      <div class="profile-body">
+        <div class="profile-image">
+          <img src="/img/elon.jpg" alt="Profile Photo">
+        </div>
+        <div class="profile-info">
+          <div class="profile-basic-info">
+            <div class="name">
+              <h2 class="heading secondary-heading">Elon Musk</h2>
+            </div>
+            <div class="location">
+                <svg class="icon icon--location" viewBox="0 0 32 32">
+                  <title>Location</title>
+                  <path d="M16 0c-5.523 0-10 4.477-10 10 0 10 10 22 10 22s10-12 10-22c0-5.523-4.477-10-10-10zM16 16.125c-3.383 0-6.125-2.742-6.125-6.125s2.742-6.125 6.125-6.125 6.125 2.742 6.125 6.125-2.742 6.125-6.125 6.125zM12.125 10c0-2.14 1.735-3.875 3.875-3.875s3.875 1.735 3.875 3.875c0 2.14-1.735 3.875-3.875 3.875s-3.875-1.735-3.875-3.875z"></path>
+                </svg>
+                <span>Los Angeles, CA</span>
+            </div>
+          </div>
+          <div class="profile-contact-info">
+            <span class="contact-info">Contact Information <span class="line">&nbsp;</span></span>
+            <div class="contact-details">
+              <span class="title"><strong>Phone:</strong></span>
+              <span class="value">+1 800 613 8840</span>
+              <span class="title"><strong>Email:</strong></span>
+              <span class="value">elon@tesla.com</span>
+              <span class="title"><strong>Address:</strong></span>
+              <span class="value">No. 45 Harley Drive, San Jose</span>
+              <!-- <span class="title"><strong>Site:</strong></span>
+              <span class="value">www.tesla.com</span> -->
+            </div>
+          </div>
+          <!-- <div class="profile-other-info">
+            <span class="other-info">Other Information</span>
+            <div class="other-details">
+              <span class="title"><strong>Birthday:</strong></span>
+              <span class="value">June 28, 1971</span>
+              <span class="title"><strong>Gender:</strong></span>
+              <span class="value">Male</span>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="/index.js"></script>
+</body>
+</html>
