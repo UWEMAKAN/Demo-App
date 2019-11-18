@@ -9,7 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "surge": "^0.21.3"
+    
   },
   "devDependencies": {},
   "repository": {
